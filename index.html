@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="Explore my web development portfolio and responsive websites built with HTML and CSS.">
+  <meta name="description" content="Explore my web development portfolio featuring responsive education, restaurant and bakery website projects.">
 
   <title>My Portfolio | Web Developer</title>
 
@@ -13,7 +13,7 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-    } 
+    }
 
     html {
       scroll-behavior: smooth;
@@ -148,22 +148,28 @@
       color: #aeb2c9;
     }
 
-    .projects {
+    .projects,
+    .skills {
       background: #131529;
     }
 
     .project-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+      align-items: stretch;
     }
 
     .project-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
       background: #1a1d34;
       border: 1px solid #2c304d;
       border-radius: 15px;
-      padding: 28px;
+      padding: 25px;
       transition: 0.25s;
+      min-width: 0;
     }
 
     .project-card:hover {
@@ -180,13 +186,14 @@
     }
 
     .project-card h3 {
-      font-size: 24px;
+      font-size: 22px;
       margin: 12px 0;
     }
 
     .project-card p {
       color: #b9bdd2;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
+      flex-grow: 1;
     }
 
     .project-type {
@@ -196,7 +203,13 @@
       padding: 5px 10px;
       border-radius: 5px;
       font-size: 12px;
-      margin-bottom: 15px;
+      margin: 12px 0 5px;
+    }
+
+    .project-card .button {
+      padding: 11px 15px;
+      font-size: 14px;
+      margin-top: auto;
     }
 
     .about-content {
@@ -208,10 +221,6 @@
     .about-content p {
       color: #b9bdd2;
       margin-bottom: 15px;
-    }
-
-    .skills {
-      background: #131529;
     }
 
     .skill-list {
@@ -247,7 +256,13 @@
       font-size: 13px;
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 900px) {
+      .project-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 600px) {
       nav {
         justify-content: center;
       }
@@ -272,6 +287,10 @@
       .button-outline {
         margin: 12px 0 0;
       }
+
+      .section-heading h2 {
+        font-size: 29px;
+      }
     }
   </style>
 </head>
@@ -295,16 +314,20 @@
   </header>
 
   <main>
+
     <section class="hero" id="home">
       <div class="container">
         <span class="tag">HTML & CSS Web Development</span>
 
-        <h1>Building the Web,<br><span>One Project at a Time.</span></h1>
+        <h1>
+          Building the Web,<br>
+          <span>One Project at a Time.</span>
+        </h1>
 
         <p>
-          Hello! I'm an aspiring web developer who enjoys creating
-          clean, responsive and user-friendly websites for businesses
-          and learning projects.
+          I'm an aspiring web developer who enjoys creating
+          clean, responsive and user-friendly websites for
+          small businesses, educational services and creative brands.
         </p>
 
         <a href="#projects" class="button">Explore My Work →</a>
@@ -314,25 +337,29 @@
 
     <section class="projects" id="projects">
       <div class="container">
+
         <div class="section-heading">
           <h2>My Projects</h2>
-          <p>A selection of websites I've built using HTML and CSS.</p>
+          <p>
+            Three website concepts built with HTML and CSS.
+          </p>
         </div>
 
         <div class="project-grid">
+
+          <!-- PROJECT 01 -->
           <article class="project-card">
             <span class="project-number">PROJECT 01</span>
-            <br>
             <span class="project-type">Education Website</span>
 
             <h3>BrightPath Tutorials</h3>
 
             <p>
-              A clean educational website featuring subject cards,
-              an introduction section and a contact link.
+              A student-friendly educational website featuring
+              subject information, an introduction section and
+              a convenient contact option.
             </p>
 
-            
             <a
               href="https://loun-design.github.io/brightpath-website/"
               class="button"
@@ -341,19 +368,19 @@
             >View Live Website →</a>
           </article>
 
+          <!-- PROJECT 02 -->
           <article class="project-card">
             <span class="project-number">PROJECT 02</span>
-            <br>
             <span class="project-type">Restaurant Website</span>
 
-            <h3>Saffron & Stone</h3>
+            <h3>Saffron &amp; Stone</h3>
 
             <p>
-              An elegant restaurant website featuring food photography,
-              menu cards, opening hours and contact information.
+              An elegant restaurant website concept featuring
+              food photography, menu highlights and restaurant
+              information in a modern layout.
             </p>
 
-            
             <a
               href="https://loun-design.github.io/saffron-stone-restaurant/"
               class="button"
@@ -361,6 +388,28 @@
               rel="noopener noreferrer"
             >View Live Website →</a>
           </article>
+
+          <!-- PROJECT 03 -->
+          <article class="project-card">
+            <span class="project-number">PROJECT 03</span>
+            <span class="project-type">Bakery Website</span>
+
+            <h3>Sugar &amp; Crumb Studio</h3>
+
+            <p>
+              A warm, responsive bakery website concept showcasing
+              brownies, celebration cakes, cookies and cupcakes
+              with an inviting design for a small business.
+            </p>
+
+            <a
+              href="https://loun-design.github.io/sugar-crumb-bakery-demo/"
+              class="button"
+              target="_blank"
+              rel="noopener noreferrer"
+            >View Live Website →</a>
+          </article>
+
         </div>
       </div>
     </section>
@@ -373,13 +422,14 @@
 
         <p>
           I'm developing my web development skills by building
-          practical projects and learning how to create websites
-          that look good on both laptops and mobile phones.
+          practical website projects and learning how to create
+          designs that work well on both laptops and mobile phones.
         </p>
 
         <p>
-          I'm interested in working with tutors, small businesses
-          and entrepreneurs who need a simple online presence.
+          I'm interested in helping tutors, small businesses
+          and entrepreneurs establish a simple online presence.
+          I'm continuously learning and improving with every project.
         </p>
       </div>
     </section>
@@ -388,7 +438,7 @@
       <div class="container">
         <div class="section-heading">
           <h2>My Skills</h2>
-          <p>Technologies I've used in my current projects.</p>
+          <p>Technologies and tools used in my current projects.</p>
         </div>
 
         <div class="skill-list">
@@ -412,12 +462,14 @@
           I'd be happy to hear about it.
         </p>
 
-       
-        <a href="mailto:loundesignworks@gmail.com" class="button">
-          Send Me an Email →
-        </a>
+        
+        <a
+          href="mailto:loundesignworks@gmail.com"
+          class="button"
+        >Send Me an Email →</a>
       </div>
     </section>
+
   </main>
 
   <footer>
