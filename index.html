@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Explore my web development portfolio and responsive websites built with HTML and CSS.">
+
+  <title>My Portfolio | Web Developer</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #0e1020;
+      color: #f4f4fb;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    header {
+      padding: 22px 0;
+      border-bottom: 1px solid #252840;
+      background: #0e1020;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .logo {
+      font-size: 23px;
+      font-weight: bold;
+      color: #a99aff;
+    }
+
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      list-style: none;
+    }
+
+    nav a {
+      color: #d1d3e4;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #a99aff;
+    }
+
+    .hero {
+      padding: 105px 0;
+      text-align: center;
+      background:
+        radial-gradient(ellipse at top, #28234b 0%, #0e1020 65%);
+    }
+
+    .tag {
+      display: inline-block;
+      color: #c3b7ff;
+      background: #292447;
+      border: 1px solid #47406e;
+      border-radius: 30px;
+      padding: 7px 15px;
+      font-size: 13px;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 7vw, 66px);
+      line-height: 1.15;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 span {
+      color: #a99aff;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: 0 auto 30px;
+      color: #b9bdd2;
+      font-size: 17px;
+    }
+
+    .button {
+      display: inline-block;
+      background: #8873f5;
+      color: white;
+      text-decoration: none;
+      padding: 13px 23px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .button:hover {
+      background: #715be0;
+      transform: translateY(-2px);
+    }
+
+    .button-outline {
+      background: transparent;
+      border: 1px solid #777c9c;
+      margin-left: 10px;
+    }
+
+    .button-outline:hover {
+      background: #242640;
+    }
+
+    section {
+      padding: 75px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-heading h2 {
+      font-size: 34px;
+      margin-bottom: 10px;
+    }
+
+    .section-heading p {
+      color: #aeb2c9;
+    }
+
+    .projects {
+      background: #131529;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .project-card {
+      background: #1a1d34;
+      border: 1px solid #2c304d;
+      border-radius: 15px;
+      padding: 28px;
+      transition: 0.25s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      border-color: #8873f5;
+      box-shadow: 0 12px 35px #00000025;
+    }
+
+    .project-number {
+      color: #a99aff;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .project-card h3 {
+      font-size: 24px;
+      margin: 12px 0;
+    }
+
+    .project-card p {
+      color: #b9bdd2;
+      margin-bottom: 20px;
+    }
+
+    .project-type {
+      display: inline-block;
+      background: #292447;
+      color: #c3b7ff;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 12px;
+      margin-bottom: 15px;
+    }
+
+    .about-content {
+      max-width: 760px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .about-content p {
+      color: #b9bdd2;
+      margin-bottom: 15px;
+    }
+
+    .skills {
+      background: #131529;
+    }
+
+    .skill-list {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .skill {
+      background: #20233e;
+      border: 1px solid #343958;
+      border-radius: 8px;
+      padding: 12px 20px;
+      color: #ded8ff;
+      font-weight: bold;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact p {
+      color: #b9bdd2;
+      margin: 12px 0 25px;
+    }
+
+    footer {
+      border-top: 1px solid #252840;
+      padding: 23px 0;
+      text-align: center;
+      color: #9fa3ba;
+      font-size: 13px;
+    }
+
+    @media (max-width: 700px) {
+      nav {
+        justify-content: center;
+      }
+
+      nav ul {
+        justify-content: center;
+        gap: 14px;
+      }
+
+      .hero {
+        padding: 75px 0;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 55px 0;
+      }
+
+      .button-outline {
+        margin: 12px 0 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">MyPortfolio.</div>
+
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <span class="tag">HTML & CSS Web Development</span>
+
+        <h1>Building the Web,<br><span>One Project at a Time.</span></h1>
+
+        <p>
+          Hello! I'm an aspiring web developer who enjoys creating
+          clean, responsive and user-friendly websites for businesses
+          and learning projects.
+        </p>
+
+        <a href="#projects" class="button">Explore My Work →</a>
+        <a href="#contact" class="button button-outline">Contact Me</a>
+      </div>
+    </section>
+
+    <section class="projects" id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <h2>My Projects</h2>
+          <p>A selection of websites I've built using HTML and CSS.</p>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card">
+            <span class="project-number">PROJECT 01</span>
+            <br>
+            <span class="project-type">Education Website</span>
+
+            <h3>BrightPath Tutorials</h3>
+
+            <p>
+              A clean educational website featuring subject cards,
+              an introduction section and a contact link.
+            </p>
+
+            
+            <a
+              href="https://loun-design.github.io/brightpath-website/"
+              class="button"
+              target="_blank"
+              rel="noopener noreferrer"
+            >View Live Website →</a>
+          </article>
+
+          <article class="project-card">
+            <span class="project-number">PROJECT 02</span>
+            <br>
+            <span class="project-type">Restaurant Website</span>
+
+            <h3>Saffron & Stone</h3>
+
+            <p>
+              An elegant restaurant website featuring food photography,
+              menu cards, opening hours and contact information.
+            </p>
+
+            <!-- Replace # with your restaurant live URL -->
+            <a
+              href="https://loun-design.github.io/saffron-stone-restaurant/"
+              class="button"
+              target="_blank"
+              rel="noopener noreferrer"
+            >View Live Website →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container about-content">
+        <div class="section-heading">
+          <h2>About Me</h2>
+        </div>
+
+        <p>
+          I'm developing my web development skills by building
+          practical projects and learning how to create websites
+          that look good on both laptops and mobile phones.
+        </p>
+
+        <p>
+          I'm interested in working with tutors, small businesses
+          and entrepreneurs who need a simple online presence.
+        </p>
+      </div>
+    </section>
+
+    <section class="skills" id="skills">
+      <div class="container">
+        <div class="section-heading">
+          <h2>My Skills</h2>
+          <p>Technologies I've used in my current projects.</p>
+        </div>
+
+        <div class="skill-list">
+          <span class="skill">HTML5</span>
+          <span class="skill">CSS3</span>
+          <span class="skill">Responsive Design</span>
+          <span class="skill">GitHub</span>
+          <span class="skill">GitHub Pages</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Let's Work Together</h2>
+        </div>
+
+        <p>
+          Have a website idea or a small business project?
+          I'd be happy to hear about it.
+        </p>
+
+        <!-- Replace with an email address you control -->
+        <a href="mailto:loundesignworks@gmail.com" class="button">
+          Send Me an Email →
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 My Portfolio. Built with HTML and CSS.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
